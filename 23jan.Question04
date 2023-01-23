@@ -1,0 +1,16 @@
+Q4
+In C++, you can re-throw an exception using the "throw;" statement without any argument. This re-throws the current exception that is being handled.
+try {
+   
+   if (some_error) {
+      throw std::runtime_error("Error occurred");
+   }
+   
+} catch (const std::exception& e) {
+   
+   log_error(e.what());
+   throw;  
+}
+the try block contains code that may throw an exception, such as when the "some_error" condition is true. 
+The catch block catches the exception and handles it by logging the error message. 
+The throw statement without any argument is used to re-throw the exception, which can be caught by another catch block or passed up the call stack.
